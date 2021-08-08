@@ -1,13 +1,18 @@
 import styled from "styled-components";
+import breakpoints from "./../../../../../utils/breakpoints";
 
 export const Container = styled.div`
   background: ${(props) => props.theme.whiteDark};
   border-radius: 0.7rem;
   padding: 1rem;
-  max-width: 40rem;
+  width: 100%;
+  max-width: 30rem;
   margin: 0 auto;
   position: relative;
   top: 10rem;
+  ${breakpoints("top", "rem", [{ 425: 11 }])}
+  ${breakpoints("width", "%", [{ 425: 400 }])}
+  ${breakpoints("left", "rem", [{ 425: -5 }])}
 `;
 
 export const Titlecard = styled.h1`
@@ -59,6 +64,8 @@ export const CardPizzas = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+
+  ${breakpoints("overflow-y", "", [{ 425: "auto" }])}
 `;
 
 export const CardContent = styled.div`
