@@ -10,8 +10,9 @@ import {
   selectFormasPagamento,
   getFormasPag,
   addPagamento,
-  selectedPedidoPagamento,  
+  selectedPedidoPagamento,
   reset,
+  selectPoints,
 } from "./../../redux/pedido/index";
 import { addPoints } from "../../redux/usuario";
 import MainTemplate from "../../components/templates/MainTemplate";
@@ -24,6 +25,7 @@ import { useHistory } from "react-router-dom";
 function PagamentoPage() {
   const dispatch = useDispatch();
   const pedidoMassa = useSelector(selectPedidoMassa);
+  const pedidoPoints = useSelector(selectPoints);
   const pedidoTamanho = useSelector(selectPedidoTamanho);
   const pedidoSabor = useSelector(selectPedidoSabor);
   const formasPagamento = useSelector(selectFormasPagamento);
@@ -34,6 +36,9 @@ function PagamentoPage() {
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     if (formasPagamento == null) dispatch(getFormasPag());
+
+    if (pedidoMassa === null || pedidoSabor === null || pedidoTamanho === null)
+      history.push("/");
   }, []);
 
   const handleSelectPagamento = (pagamento) => {
@@ -43,9 +48,11 @@ function PagamentoPage() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      handleModal();
-      dispatch(addPoints(50));
+      if (pedidoPoints) {
+        dispatch(addPoints(pedidoPoints));
+      }
       dispatch(reset());
+      handleModal();
       history.push("/");
     }, 2000);
   };
@@ -79,7 +86,7 @@ function PagamentoPage() {
         cancelText="Voltar"
         okButtonProps={{ style: { background: "#00a752", border: "none" } }}
         okText="Confirmar"
-      >
+      >        
         <Text color="#333" size="1.4rem" weight={600}>
           {pedidoSabor?.nome}
         </Text>
@@ -99,7 +106,7 @@ function PagamentoPage() {
           {handleCalcPreco()}
         </Text>
         <Text color="#de9f43" weight={400} size="1rem">
-          StoomPoints - 50
+          StoomPoints - {pedidoPoints || "0"}
         </Text>
       </Modal>
     </MainTemplate>

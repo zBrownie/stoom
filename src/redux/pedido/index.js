@@ -6,6 +6,7 @@ const initialState = {
   tamanho: null,
   sabor: null,
   pagamento: null,
+  stoomPoints: null,
   formasPagamento: null,
 };
 
@@ -22,6 +23,9 @@ export const pedidoSlice = createSlice({
     addSabor: (state, action) => {
       state.sabor = action.payload;
     },
+    addPoints: (state, action) => {
+      state.stoomPoints = action.payload;
+    },
     getFormasPag: (state) => {
       state.formasPagamento = formasPagamento;
     },
@@ -36,6 +40,7 @@ export const {
   addMassa,
   addTamanho,
   addSabor,
+  addPoints,
   addPagamento,
   getFormasPag,
   handlePagar,
@@ -47,5 +52,6 @@ export const selectPedidoTamanho = (state) => state.pedido?.tamanho;
 export const selectPedidoSabor = (state) => state.pedido?.sabor;
 export const selectedPedidoPagamento = (state) => state.pedido?.pagamento;
 export const selectFormasPagamento = (state) => state.pedido?.formasPagamento;
+export const selectPoints = (state) => state.pedido?.stoomPoints;
 
 export default pedidoSlice.reducer;

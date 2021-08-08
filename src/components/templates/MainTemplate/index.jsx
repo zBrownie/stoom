@@ -25,7 +25,7 @@ import {
   PointsRow,
   SpaceWhite,
 } from "./styles";
-import { addMassa, addSabor, addTamanho } from "../../../redux/pedido";
+import { addMassa, addPoints, addSabor, addTamanho } from "../../../redux/pedido";
 import { useHistory } from "react-router-dom";
 import Stepper from "./components/Stepper";
 const imgPizza = "https://img.icons8.com/ios/452/pizza.png";
@@ -40,6 +40,7 @@ function MainTemplate({ children }) {
     dispatch(addMassa(pizza.massa));
     dispatch(addSabor(pizza.sabor));
     dispatch(addTamanho(pizza.tamanho));
+    dispatch(addPoints(pizza.points));
     history.push("/pagamento");
   };
   useEffect(() => {
@@ -51,8 +52,7 @@ function MainTemplate({ children }) {
   }, [pizza]);
 
   return (
-    <Container>
-      {console.log(pizza)}
+    <Container>      
       <AppBar>
         <LogoAppBar>
           <IconPizza src={imgPizza} alt="icon-pizza" />
