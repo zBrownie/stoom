@@ -31,7 +31,7 @@ function Stepper() {
   }, [location]);
 
   return (
-    <Container>
+    <Container id="initScreen">
       <Steps
         size="small"
         current={currentStepper}

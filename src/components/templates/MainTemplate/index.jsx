@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUsuario, getUser } from "./../../../redux/usuario/index";
 import PizzaDoDiaMolecule from "./../../templates/MainTemplate/components/PizzaDoDiaMolecule";
-import {
-  getPizzData,
+import {  
   getPizzDoDia,
   selectPizzaDoDia,
 } from "./../../../redux/pizza/index";

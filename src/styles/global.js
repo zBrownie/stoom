@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 100%;
       background: #eee;
+      scroll-behavior: smooth;
   }
 
   body,input,button{

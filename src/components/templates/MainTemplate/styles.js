@@ -59,7 +59,7 @@ export const SpaceWhite = styled.div`
 export const TitleAppBar = styled.h1`
   color: white;
   font-size: 1.5rem;
-  margin:0;
+  margin: 0;
 `;
 
 export const SubTitleAppBar = styled.p`
@@ -77,6 +77,8 @@ export const IconStoomPoins = styled.img`
   width: 100%;
   max-width: 4rem;
   height: auto;
+  ${breakpoints("display", "", [{ 375: "none" }])}
+  
 `;
 export const UserTextAppBar = styled.div`
   display: flex;

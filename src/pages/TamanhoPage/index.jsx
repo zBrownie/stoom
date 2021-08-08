@@ -19,6 +19,7 @@ function TamanhoPage() {
   };
   const handleAvancarPage = () => {
     history.push("/pagamento");
+    document.getElementById("initScreen").scrollIntoView();
   };
 
   useEffect(() => {

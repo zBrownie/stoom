@@ -22,6 +22,7 @@ function HomePage() {
   };
   const handleAvancarPage = () => {
     history.push("/montar/1");
+    document.getElementById("initScreen").scrollIntoView();
   };
   return (
     <MainTemplate>

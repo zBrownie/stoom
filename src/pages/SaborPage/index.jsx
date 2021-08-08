@@ -19,6 +19,7 @@ function SaborPage() {
   };
   const handleAvancarPage = () => {
     history.push("/montar/2");
+    document.getElementById("initScreen").scrollIntoView();
   };
 
   useEffect(() => {

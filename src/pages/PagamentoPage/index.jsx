@@ -53,6 +53,7 @@ function PagamentoPage() {
       }
       dispatch(reset());
       handleModal();
+      
       history.push("/");
     }, 2000);
   };
