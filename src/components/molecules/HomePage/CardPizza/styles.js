@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const CardPizzas = styled.div`
   background-image: url(${(props) => props.url});
   background-position: center;
+  border: none;
   width: 100%;
-  height: 18rem;
+  height: 20rem;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -12,7 +13,7 @@ export const CardPizzas = styled.div`
   border-bottom-left-radius: 1rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
@@ -22,7 +23,7 @@ export const CardContent = styled.div`
   background: ${(props) => props.theme.whiteDark};
   width: 80%;
   height: 100%;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.8rem;
   display: flex;
   flex-direction: column;
   text-align: left;
