@@ -1,6 +1,6 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
- const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *{
       padding: 0;
       margin: 0;
@@ -16,7 +16,7 @@ import {createGlobalStyle} from 'styled-components';
   body,input,button{
       font-size: 100%;
       font-weight: 400;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Poppins',Arial, Helvetica, sans-serif;
   }
 `;
-export default GlobalStyle
+export default GlobalStyle;
