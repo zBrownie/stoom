@@ -77,7 +77,7 @@ export const IconStoomPoins = styled.img`
   width: 100%;
   max-width: 4rem;
   height: auto;
-  ${breakpoints("display", "", [{ 375: "none" }])}
+  ${breakpoints("display", "", [{ 425: "none" }])}
   
 `;
 export const UserTextAppBar = styled.div`
