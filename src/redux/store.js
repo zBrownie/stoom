@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage/session";
+
 import { combineReducers } from "redux";
 import { persistReducer, persistStore } from "redux-persist";
 import usuarioReducer from "./usuario";
@@ -7,7 +8,7 @@ import pizzaReducer from "./pizza";
 import pedidoReducer from "./pedido";
 
 const persistConfig = {
-  key: "root",
+  key: "stoom-store",
   storage,
 };
 
