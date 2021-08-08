@@ -1,6 +1,8 @@
 import React from "react";
 import Buttons from "./../../../../atoms/Buttons/index";
 import { FiCheck } from "react-icons/fi";
+import { BsFillStarFill } from "react-icons/bs";
+
 import {
   Container,
   CardPizzas,
@@ -10,24 +12,35 @@ import {
   FooterCard,
   FooterText,
   Titlecard,
+  IconPointsValue,
+  TextPoints,
 } from "./styles";
 const iconPizzaContet =
   "https://st.depositphotos.com/1003814/5052/i/600/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg";
-function PizzaDoDiaMolecule() {
+function PizzaDoDiaMolecule({ data }) {
   return (
     <Container>
       <Titlecard>Pizza do dia</Titlecard>
+      <IconPointsValue>
+        <BsFillStarFill className="iconStar" />
+        <TextPoints>{data?.points} points</TextPoints>
+      </IconPointsValue>
       <CardPizzas url={iconPizzaContet}>
         <CardContent>
-          <CardTitleContent>Pizza Napolitana</CardTitleContent>
+          <CardTitleContent>{data?.nome}</CardTitleContent>
           <CardTextContent isTitle>Massa:</CardTextContent>
-          <CardTextContent>Napolitana</CardTextContent>
+          <CardTextContent>{data?.massa}</CardTextContent>
           <CardTextContent isTitle>Massa:</CardTextContent>
           <CardTextContent>
-            mussarela,peito de peru,palmito,parmesão,orégano
+            {data?.ingredientes.map((ing) => `${ing}, `)}            
           </CardTextContent>
           <FooterCard>
-            <FooterText>R$ 37,00</FooterText>
+            <FooterText>
+              {new Intl.NumberFormat("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              }).format(data?.preco)}
+            </FooterText>
             <Buttons
               color="#00a94d"
               onClick={() => alert("PIZZA DO DIA")}

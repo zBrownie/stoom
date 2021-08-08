@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { pizzaData } from "../../mock/pizzas";
+import { pizzaData, pizzaDia } from "../../mock/pizzas";
 
 const initialState = {
+  pizzaData: null,
   pizzaDoDia: null,
-  massas: null,
-  sabores: null,
-  tamanhos: null,
 };
 
 export const pizzaSlice = createSlice({
@@ -13,19 +11,17 @@ export const pizzaSlice = createSlice({
   initialState,
   reducers: {
     getPizzData: (state) => {
-      state.pizzaDoDia = pizzaData.pizzaDoDia;
-      state.massas = pizzaData.massas;
-      state.sabores = pizzaData.sabores;
-      state.tamanhos = pizzaData.tamanhos;
+      state.pizzaData = pizzaData;
+    },
+    getPizzDoDia: (state) => {
+      state.pizzaDoDia = pizzaDia;
     },
   },
 });
 
-export const { getPizzData } = pizzaSlice.actions;
+export const { getPizzData, getPizzDoDia } = pizzaSlice.actions;
 
-export const selectPizzaDoDia = (state) => state.pizza.pizzaDoDia;
-export const selectMassas = (state) => state.pizza.massas;
-export const selectSabores = (state) => state.pizza.sabores;
-export const selectTamanhos = (state) => state.pizza.tamanhos;
+export const selectPizzaData = (state) => state.pizza?.pizzaData;
+export const selectPizzaDoDia = (state) => state.pizza?.pizzaDoDia;
 
 export default pizzaSlice.reducer;

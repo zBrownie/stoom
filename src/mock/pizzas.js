@@ -1,12 +1,4 @@
 export const pizzaData = {
-  pizzaDoDia: {
-    id: 1,
-    nome: "Pizza Napolitana",
-    massa: "Napolitana",
-    tamanho: "M",
-    ingredientes: ["", "", ""],
-    preco: 37,
-  },
   massas: [
     {
       id: 1,
@@ -97,4 +89,20 @@ export const pizzaData = {
       preco: 11,
     },
   ],
+};
+
+export const pizzaDia = {
+  id: 1,
+  nome: "Pizza Napolitana",
+  massa: "Napolitana",
+  tamanho: "M",
+  points: 50,
+  ingredientes: [
+    "mussarela",
+    "peito de peru",
+    "palmito",
+    "parmesão",
+    "orégano",
+  ],
+  preco: 37,
 };

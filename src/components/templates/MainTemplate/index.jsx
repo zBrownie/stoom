@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUsuario, getUser } from "./../../../redux/usuario/index";
 import PizzaDoDiaMolecule from "./../../templates/MainTemplate/components/PizzaDoDiaMolecule";
 import {
+  getPizzData,
+  getPizzDoDia,
+  selectPizzaDoDia,
+} from "./../../../redux/pizza/index";
+import {
   AppBar,
   Container,
   Content,
@@ -24,10 +29,17 @@ const imgPizza = "https://img.icons8.com/ios/452/pizza.png";
 const iconPoints = "https://image.flaticon.com/icons/png/512/66/66550.png";
 function MainTemplate({ children }) {
   const usuario = useSelector(selectUsuario);
+  const pizza = useSelector(selectPizzaDoDia);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (usuario == null) dispatch(getUser());
   }, [usuario]);
+
+  useEffect(() => {
+    if (pizza == null) dispatch(getPizzDoDia());
+  }, [pizza]);
+
   return (
     <Container>
       <AppBar>
@@ -48,7 +60,7 @@ function MainTemplate({ children }) {
             </PointsRow>
           </UserTextAppBar>
         </UserAppBar>
-        <PizzaDoDiaMolecule />
+        <PizzaDoDiaMolecule data={pizza} />
       </AppBar>
       <SpaceWhite />
       <Content>{children}</Content>

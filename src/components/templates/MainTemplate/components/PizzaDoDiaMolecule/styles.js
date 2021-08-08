@@ -15,6 +15,34 @@ export const Titlecard = styled.h1`
   font-weight: 600;
 `;
 
+export const IconPointsValue = styled.div`
+  position: absolute;
+  top: -2.5rem;
+  right: -1.7rem;
+
+  .iconStar {
+    z-index: 100;
+    font-size: 5rem;
+    color: #0099d0;
+  }
+`;
+
+export const TextPoints = styled.p`
+  color: white;
+  font-weight: 600;
+  z-index: 102;
+  position: absolute;
+  left: 2rem;
+  bottom: 1.6rem;
+  width: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const CardPizzas = styled.div`
   background-image: url(${(props) => props.url});
   background-position: center;
