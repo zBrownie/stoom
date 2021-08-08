@@ -27,6 +27,7 @@ import {
 } from "./styles";
 import { addMassa, addSabor, addTamanho } from "../../../redux/pedido";
 import { useHistory } from "react-router-dom";
+import Stepper from "./components/Stepper";
 const imgPizza = "https://img.icons8.com/ios/452/pizza.png";
 const iconPoints = "https://image.flaticon.com/icons/png/512/66/66550.png";
 function MainTemplate({ children }) {
@@ -73,6 +74,7 @@ function MainTemplate({ children }) {
         <PizzaDoDiaMolecule data={pizza} callBack={handleSelectPizza} />
       </AppBar>
       <SpaceWhite />
+      <Stepper />
       <Content>{children}</Content>
     </Container>
   );
