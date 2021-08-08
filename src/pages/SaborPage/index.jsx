@@ -20,10 +20,16 @@ function SaborPage() {
   const handleAvancarPage = () => {
     history.push("/montar/2");
   };
+
+  useEffect(() => {
+    if (pizzaData?.sabores == null) {
+      history.push("/");
+    }
+  }, [history, pizzaData]);
   return (
     <MainTemplate>
       <SaborPageOrganism
-        data={pizzaData}
+        data={pizzaData?.sabores}
         selectedSabor={pedidoSabor}
         callBack={handleSelectSabor}
         callBackPage={handleAvancarPage}

@@ -17,7 +17,17 @@ import {
 } from "./styles";
 const iconPizzaContet =
   "https://st.depositphotos.com/1003814/5052/i/600/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg";
-function PizzaDoDiaMolecule({ data }) {
+function PizzaDoDiaMolecule({ data, callBack }) {
+  const handleCalcPreco = () => {
+    let preco = 0;
+    preco += data?.massa?.preco;
+    preco += data?.sabor?.preco;
+    preco += data?.tamanho?.preco;
+    return new Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    }).format(preco);
+  };
   return (
     <Container>
       <Titlecard>Pizza do dia</Titlecard>
@@ -29,23 +39,14 @@ function PizzaDoDiaMolecule({ data }) {
         <CardContent>
           <CardTitleContent>{data?.nome}</CardTitleContent>
           <CardTextContent isTitle>Massa:</CardTextContent>
-          <CardTextContent>{data?.massa}</CardTextContent>
-          <CardTextContent isTitle>Massa:</CardTextContent>
+          <CardTextContent>{data?.massa?.nome}</CardTextContent>
+          <CardTextContent isTitle>Ingredientes:</CardTextContent>
           <CardTextContent>
-            {data?.ingredientes.map((ing) => `${ing}, `)}            
+            {data?.sabor?.ingredientes.map((ing) => `${ing}, `)}
           </CardTextContent>
           <FooterCard>
-            <FooterText>
-              {new Intl.NumberFormat("pt-br", {
-                style: "currency",
-                currency: "BRL",
-              }).format(data?.preco)}
-            </FooterText>
-            <Buttons
-              color="#00a94d"
-              onClick={() => alert("PIZZA DO DIA")}
-              size="7rem"
-            >
+            <FooterText>{handleCalcPreco()}</FooterText>
+            <Buttons color="#00a94d" onClick={callBack} size="7rem">
               quero! <FiCheck size={28} color="white" />
             </Buttons>
           </FooterCard>

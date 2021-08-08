@@ -22,10 +22,10 @@ export const LogoAppBar = styled.div`
   align-items: center;
   position: absolute;
   top: 2rem;
-  left: 35rem;
+  left: 40rem;
   ${breakpoints("left", "rem", [
     { 1440: 25 },
-    { 1024: 15 },
+    { 1024: 12 },
     { 768: 5 },
     { 425: 1 },
   ])}
@@ -36,10 +36,10 @@ export const UserAppBar = styled.div`
   align-items: center;
   position: absolute;
   top: 2rem;
-  right: 35rem;
+  right: 40rem;
   ${breakpoints("right", "rem", [
     { 1440: 25 },
-    { 1024: 15 },
+    { 1024: 12 },
     { 768: 5 },
     { 425: 1 },
   ])}
@@ -53,7 +53,7 @@ export const IconPizza = styled.img`
 
 export const SpaceWhite = styled.div`
   width: 100%;
-  height: 12.5rem;
+  height: 13rem;
 `;
 
 export const TitleAppBar = styled.h1`

@@ -22,7 +22,7 @@ export const pizzaData = {
   sabores: [
     {
       id: 1,
-      nome: "Calabresa",
+      nome: "Pizza Calabresa",
       ingredientes: [
         "mussarela",
         "peito de peru",
@@ -30,7 +30,7 @@ export const pizzaData = {
         "parmesão",
         "orégano",
       ],
-      preco: 37,
+      preco: 15,
     },
     {
       id: 2,
@@ -42,11 +42,11 @@ export const pizzaData = {
         "parmesão",
         "orégano",
       ],
-      preco: 37,
+      preco: 10,
     },
     {
       id: 3,
-      nome: "Calabresa",
+      nome: "Pizza Frango Catupiry",
       ingredientes: [
         "mussarela",
         "peito de peru",
@@ -54,11 +54,11 @@ export const pizzaData = {
         "parmesão",
         "orégano",
       ],
-      preco: 37,
+      preco: 16,
     },
     {
       id: 4,
-      nome: "Calabresa",
+      nome: "Pizza Portuguesa",
       ingredientes: [
         "mussarela",
         "peito de peru",
@@ -66,7 +66,7 @@ export const pizzaData = {
         "parmesão",
         "orégano",
       ],
-      preco: 37,
+      preco: 12,
     },
   ],
   tamanhos: [
@@ -94,15 +94,29 @@ export const pizzaData = {
 export const pizzaDia = {
   id: 1,
   nome: "Pizza Napolitana",
-  massa: "Napolitana",
-  tamanho: "M",
+  massa: {
+    id: 1,
+    nome: "Napolitana",
+    info: "O modo napolitano de preparo é considerado um Patrimônio Cultural Imaterial da Humanidade pela Unesco. Acima de tudo,  a massa napolitana deve atender a um conjunto muito específico. Seu sabor e textura únicos, precisam ser assados em um forno a lenha com cúpula. Além disso,  a massa deve ser amassada à mão, com no máximo 35 centímetros de diâmetro e no máximo um terço de centímetro de espessura. Os estilos clássicos incluem a Margherita e a Marinara. E devido ao sabor e textura é a opção perfeita para quem quer saborear uma pizza italiana autêntica.",
+    preco: 10,
+  },
+  tamanho: {
+    id: 2,
+    nome: "Media",
+    info: "8 pedaços",
+    preco: 7,
+  },
+  sabor: {
+    id: 2,
+    nome: "Pizza Napolitana",
+    ingredientes: [
+      "mussarela",
+      "peito de peru",
+      "palmito",
+      "parmesão",
+      "orégano",
+    ],
+    preco: 20,
+  },
   points: 50,
-  ingredientes: [
-    "mussarela",
-    "peito de peru",
-    "palmito",
-    "parmesão",
-    "orégano",
-  ],
-  preco: 37,
 };

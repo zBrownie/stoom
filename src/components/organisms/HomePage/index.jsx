@@ -20,7 +20,7 @@ function HomePageOrganism({ data, callBack, selectedMassa, callBackPage }) {
         </Text>
         <HeaderContent>
           <Text color="#0e6fb9" size="1rem" weight={600}>
-            Selecione sua massa.
+            Selecione sua massa:
           </Text>
           <CountStepper>
             <Text color="#39363e" size="1rem" weight={600}>
@@ -32,7 +32,7 @@ function HomePageOrganism({ data, callBack, selectedMassa, callBackPage }) {
           return (
             <CardPizzaComponent
               data={massa}
-              selectedMassa={selectedMassa}
+              selected={selectedMassa}
               key={massa.id}
               callBack={callBack}
             />

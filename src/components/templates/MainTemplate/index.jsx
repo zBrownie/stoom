@@ -25,13 +25,22 @@ import {
   PointsRow,
   SpaceWhite,
 } from "./styles";
+import { addMassa, addSabor, addTamanho } from "../../../redux/pedido";
+import { useHistory } from "react-router-dom";
 const imgPizza = "https://img.icons8.com/ios/452/pizza.png";
 const iconPoints = "https://image.flaticon.com/icons/png/512/66/66550.png";
 function MainTemplate({ children }) {
   const usuario = useSelector(selectUsuario);
   const pizza = useSelector(selectPizzaDoDia);
   const dispatch = useDispatch();
+  const history = useHistory();
 
+  const handleSelectPizza = () => {
+    dispatch(addMassa(pizza.massa));
+    dispatch(addSabor(pizza.sabor));
+    dispatch(addTamanho(pizza.tamanho));
+    history.push("/pagamento");
+  };
   useEffect(() => {
     if (usuario == null) dispatch(getUser());
   }, [usuario]);
@@ -42,6 +51,7 @@ function MainTemplate({ children }) {
 
   return (
     <Container>
+      {console.log(pizza)}
       <AppBar>
         <LogoAppBar>
           <IconPizza src={imgPizza} alt="icon-pizza" />
@@ -60,7 +70,7 @@ function MainTemplate({ children }) {
             </PointsRow>
           </UserTextAppBar>
         </UserAppBar>
-        <PizzaDoDiaMolecule data={pizza} />
+        <PizzaDoDiaMolecule data={pizza} callBack={handleSelectPizza} />
       </AppBar>
       <SpaceWhite />
       <Content>{children}</Content>

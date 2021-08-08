@@ -26,7 +26,7 @@ function TamanhoPageOrganism({
         </Text>
         <HeaderContent>
           <Text color="#0e6fb9" size="1rem" weight={600}>
-            Selecione sua massa.
+            Selecione o tamanho:
           </Text>
           <CountStepper>
             <Text color="#39363e" size="1rem" weight={600}>
@@ -34,7 +34,7 @@ function TamanhoPageOrganism({
             </Text>
           </CountStepper>
         </HeaderContent>
-        {data?.tamanhos?.map((tamanho) => {
+        {data?.map((tamanho) => {
           return (
             <CardPizzaComponent
               data={tamanho}

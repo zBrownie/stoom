@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import TamanhoPageOrganism from "../../components/organisms/TamanhoPage";
@@ -18,12 +18,18 @@ function TamanhoPage() {
     dispatch(addTamanho(tamanho));
   };
   const handleAvancarPage = () => {
-    history.push("/montar/3");
+    history.push("/pagamento");
   };
+
+  useEffect(() => {
+    if (pizzaData?.tamanhos == null) {
+      history.push("/");
+    }
+  }, [history, pizzaData]);
   return (
     <MainTemplate>
       <TamanhoPageOrganism
-        data={pizzaData}
+        data={pizzaData?.tamanhos}
         selectedTamanho={pedidoTamanho}
         callBack={handleSelectSabor}
         callBackPage={handleAvancarPage}

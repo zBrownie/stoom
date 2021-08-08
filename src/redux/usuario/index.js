@@ -13,7 +13,7 @@ export const usuarioSlice = createSlice({
       state.usuario = usuarioData;
     },
     addPoints: (state, action) => {
-      state.usuario.stoompoints = action.payload;
+      state.usuario.stoomPoints += action.payload;
     },
   },
 });

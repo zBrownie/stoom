@@ -4,7 +4,7 @@ export const CardPizzas = styled.div`
   background-image: url(${(props) => props.url});
   background-position: center;
   width: 100%;
-  height: 16rem;
+  height: 18rem;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -30,13 +30,20 @@ export const CardContent = styled.div`
   border-bottom-right-radius: 1rem;
 `;
 
-export const HeaderCheckBox = styled.div`  
+export const HeaderCheckBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.4rem;
 `;
 
+export const ContentCard = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem;
+  overflow-y: auto;
+`;
 export const CheckBoxPizza = styled.div`
   background: ${(props) => (props.checked ? "#00a75244" : "white")};
   border: 0.13rem solid ${(props) => (props.checked ? "#00a752" : "#33333355")};

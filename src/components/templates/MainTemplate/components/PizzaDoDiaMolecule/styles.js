@@ -33,7 +33,7 @@ export const TextPoints = styled.p`
   z-index: 102;
   position: absolute;
   left: 2rem;
-  bottom: 1.6rem;
+  bottom: 1rem;
   width: 1rem;
   font-size: 0.75rem;
   text-align: center;
@@ -72,10 +72,12 @@ export const CardContent = styled.div`
 export const CardTitleContent = styled.h2`
   color: #3f3a4f;
   font-weight: 600;
+  margin: 0;
 `;
 export const CardTextContent = styled.p`
   color: ${(props) => (props.isTitle ? "#797f80" : "#484459")};
   font-weight: ${(props) => (props.isTitle ? 600 : 400)};
+  margin: 0;
 `;
 
 export const FooterCard = styled.div`

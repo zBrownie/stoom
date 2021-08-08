@@ -4,6 +4,7 @@ import Routes from './routes';
 import GlobalStyle from './styles/global';
 import { HandlerTheme } from './styles/theme';
 
+import 'antd/dist/antd.css';
 
 function App() {
   return (
