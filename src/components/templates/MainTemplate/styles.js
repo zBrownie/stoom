@@ -59,6 +59,7 @@ export const SpaceWhite = styled.div`
 export const TitleAppBar = styled.h1`
   color: white;
   font-size: 1.5rem;
+  margin:0;
 `;
 
 export const SubTitleAppBar = styled.p`
@@ -86,6 +87,7 @@ export const UserTextAppBar = styled.div`
 export const TitleUserAppBar = styled.h4`
   font-weight: 600;
   color: ${(props) => props.theme.secondary};
+  margin: 0;
 `;
 
 export const PointsRow = styled.div`
