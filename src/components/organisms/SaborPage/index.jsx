@@ -1,17 +1,18 @@
 import React from "react";
+import { MdPlayArrow } from "react-icons/md";
+import Buttons from "../../atoms/Buttons";
 import Text from "../../atoms/Text";
 import CardPizzaComponent from "../../molecules/HomePage/CardPizza";
-import Buttons from "./../../atoms/Buttons/index";
+
 import {
   Container,
   CardHomePageContent,
-  HeaderContent,
   CountStepper,
   FooterContent,
+  HeaderContent,
 } from "./styles";
-import { MdPlayArrow } from "react-icons/md";
 
-function HomePageOrganism({ data, callBack, selectedMassa, callBackPage }) {
+function SaborPageOrganism({ data, selectedSabor, callBack, callBackPage }) {
   return (
     <Container>
       <CardHomePageContent>
@@ -24,23 +25,24 @@ function HomePageOrganism({ data, callBack, selectedMassa, callBackPage }) {
           </Text>
           <CountStepper>
             <Text color="#39363e" size="1rem" weight={600}>
-              1/3
+              2/3
             </Text>
           </CountStepper>
         </HeaderContent>
-        {data?.massas?.map((massa) => {
+        {data?.sabores?.map((sabor) => {
           return (
             <CardPizzaComponent
-              data={massa}
-              selectedMassa={selectedMassa}
-              key={massa.id}
+              data={sabor}
+              selected={selectedSabor}
+              key={sabor.id}
               callBack={callBack}
+              type="SABOR"
             />
           );
         })}
         <FooterContent>
           <Buttons size="15rem" color="#00a84e" onClick={callBackPage}>
-            montar meu pedido <MdPlayArrow size={30} color="white" />
+            avançar <MdPlayArrow size={30} color="white" />
           </Buttons>
         </FooterContent>
       </CardHomePageContent>
@@ -48,4 +50,4 @@ function HomePageOrganism({ data, callBack, selectedMassa, callBackPage }) {
   );
 }
 
-export default HomePageOrganism;
+export default SaborPageOrganism;

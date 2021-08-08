@@ -12,10 +12,13 @@ export const usuarioSlice = createSlice({
     getUser: (state) => {
       state.usuario = usuarioData;
     },
+    addPoints: (state, action) => {
+      state.usuario.stoompoints = action.payload;
+    },
   },
 });
 
-export const { getUser } = usuarioSlice.actions;
+export const { getUser, addPoints } = usuarioSlice.actions;
 
 export const selectUsuario = (state) => state.usuario.usuario;
 
